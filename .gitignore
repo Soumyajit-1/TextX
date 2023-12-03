@@ -1,0 +1,11 @@
+# Xcode
+TextX.xcworkspace
+
+#Cocoapods
+Pods/
+Podfile.lock
+
+#Firebase
+TextX/GoogleService-Info.plist
+
+
