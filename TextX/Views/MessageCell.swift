@@ -9,10 +9,15 @@
 import UIKit
 
 class MessageCell: UITableViewCell {
-
+    
+    @IBOutlet weak var messageLable: UILabel!
+    @IBOutlet weak var avatar: UIImageView!
+    @IBOutlet weak var messageView: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        messageView.layer.cornerRadius = messageLable.frame.size.height/4
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
