@@ -15,6 +15,7 @@ class ChatViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.setHidesBackButton(true, animated: true)
         tableView.dataSource = self
         tableView.register(UINib(nibName: "MessageCell", bundle: nil), forCellReuseIdentifier: "MessageCell")
         db = Firestore.firestore()
@@ -37,6 +38,8 @@ class ChatViewController: UIViewController {
                         self.messages.append(message)
                         DispatchQueue.main.async {
                             self.tableView.reloadData()
+                            let indexPath = IndexPath(row: self.messages.count-1 , section: 0)
+                            self.tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
                         }
                     }
                 }
@@ -58,6 +61,7 @@ class ChatViewController: UIViewController {
                   }
                 }
         }
+        messageTextfield.text = ""
         
     }
     
@@ -85,13 +89,18 @@ extension ChatViewController : UITableViewDataSource {
         let currMsg = messages[indexPath.row]
         if currMsg.sender == Auth.auth().currentUser?.email{
             cell.youAvatar.isHidden = true
+            cell.meAvatar.isHidden = false
+            cell.messageView.backgroundColor = UIColor(named: "BrandPurple")
+            cell.messageLable.textColor = UIColor(named: "BrandLightPurple")
         }else{
             cell.meAvatar.isHidden = true
+            cell.youAvatar.isHidden = false
             cell.messageView.backgroundColor = UIColor(named: "BrandLightPurple")
             cell.messageLable.textColor = UIColor.black
         }
         return cell
     }
+    
     
     
 }
