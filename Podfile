@@ -9,7 +9,8 @@ target 'TextX' do
 
 pod 'CLTypingLabel'
 pod 'FirebaseAuth'
-pod 'FirebaseFirestore' 
+pod 'FirebaseFirestore'
+pod 'IQKeyboardManagerSwift' 
 
 post_install do |installer|
   installer.pods_project.targets.each do |target|

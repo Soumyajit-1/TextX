@@ -8,12 +8,7 @@ class ChatViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var messageTextfield: UITextField!
     
-    var messages = [
-            Message(body: "Hiii", sender: "1@2.com"),
-            Message(body: "Hlww", sender: "2@1.com"),
-            Message(body: "this is long text for testing mdeeiiennxnnnnskklllatteiiiobfvvvhuu kokadnuduehdueuduehdue is it showing", sender: "1@2.com")
-    ]
-    
+    var messages : [Message] = []
     var db : Firestore!
     
     
@@ -28,16 +23,21 @@ class ChatViewController: UIViewController {
     
     func loadMessages(){
         messages = []
-        db.collection("message").getDocuments() { (querySnapshot, err) in
+        db.collection("message")
+            .order(by: "dateField")
+            .addSnapshotListener() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
+                self.messages = []
                 for document in querySnapshot!.documents {
-                    print("\(document.documentID) => \(document.data())")
-                    if let body = document.data()["body"] as? String,
-                       let sender = document.data()["sender"] as? String {
-                        let message = Message(body: body, sender: sender)
+                    if let messageBody = document.data()["body"] as? String,
+                       let messageSender = document.data()["sender"] as? String {
+                        let message = Message(body: messageBody, sender: messageSender)
                         self.messages.append(message)
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                        }
                     }
                 }
             }
@@ -48,7 +48,8 @@ class ChatViewController: UIViewController {
         if let messageTxt = messageTextfield.text , let senderEmail = Auth.auth().currentUser?.email{
             db.collection("message").addDocument(data: [
                   "sender": senderEmail,
-                  "body": messageTxt
+                  "body": messageTxt,
+                  "dateField" : Date().timeIntervalSince1970
                 ]) { err in
                   if let err = err {
                     print("Error adding document: \(err)")
@@ -81,8 +82,14 @@ extension ChatViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MessageCell", for: indexPath) as! MessageCell
         cell.messageLable.text = messages[indexPath.row].body
-        
-        
+        let currMsg = messages[indexPath.row]
+        if currMsg.sender == Auth.auth().currentUser?.email{
+            cell.youAvatar.isHidden = true
+        }else{
+            cell.meAvatar.isHidden = true
+            cell.messageView.backgroundColor = UIColor(named: "BrandLightPurple")
+            cell.messageLable.textColor = UIColor.black
+        }
         return cell
     }
     
