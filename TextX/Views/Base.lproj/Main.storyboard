@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5B0-oX-4d1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5B0-oX-4d1">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -269,7 +268,7 @@
             </objects>
             <point key="canvasLocation" x="1857.9710144927537" y="643.52678571428567"/>
         </scene>
-        <!--TextX-->
+        <!--⚡️TextX-->
         <scene sceneID="yeH-Ia-3JZ">
             <objects>
                 <viewController storyboardIdentifier="ChatViewController" id="lwd-AH-u8E" customClass="ChatViewController" customModule="TextX" customModuleProvider="target" sceneMemberID="viewController">
@@ -278,10 +277,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xlo-0G-XA6">
-                                <rect key="frame" x="0.0" y="802" width="414" height="60"/>
+                                <rect key="frame" x="0.0" y="836" width="414" height="60"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Write a message..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UWj-GQ-Vph">
-                                        <rect key="frame" x="20" y="20" width="314" height="40"/>
+                                        <rect key="frame" x="20" y="5" width="314" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="POz-11-5A0"/>
                                         </constraints>
@@ -290,7 +289,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pym-e9-R2r">
-                                        <rect key="frame" x="354" y="20" width="40" height="40"/>
+                                        <rect key="frame" x="354" y="5" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="NGg-CU-WWH"/>
                                             <constraint firstAttribute="height" constant="40" id="juP-5r-jAV"/>
@@ -306,8 +305,8 @@
                                 </subviews>
                                 <color key="backgroundColor" name="BrandPurple"/>
                                 <constraints>
-                                    <constraint firstItem="pym-e9-R2r" firstAttribute="top" secondItem="xlo-0G-XA6" secondAttribute="top" constant="20" id="27T-Dx-HYk"/>
-                                    <constraint firstItem="UWj-GQ-Vph" firstAttribute="top" secondItem="xlo-0G-XA6" secondAttribute="top" constant="20" id="FKs-Vm-x9G"/>
+                                    <constraint firstItem="pym-e9-R2r" firstAttribute="top" secondItem="xlo-0G-XA6" secondAttribute="top" constant="5" id="27T-Dx-HYk"/>
+                                    <constraint firstItem="UWj-GQ-Vph" firstAttribute="top" secondItem="xlo-0G-XA6" secondAttribute="top" constant="5" id="FKs-Vm-x9G"/>
                                     <constraint firstItem="UWj-GQ-Vph" firstAttribute="leading" secondItem="xlo-0G-XA6" secondAttribute="leading" constant="20" id="SmO-dP-jGc"/>
                                     <constraint firstAttribute="height" constant="60" id="cV2-4S-DU8"/>
                                     <constraint firstItem="pym-e9-R2r" firstAttribute="leading" secondItem="UWj-GQ-Vph" secondAttribute="trailing" constant="20" id="xZQ-Wv-YxR"/>
@@ -320,18 +319,18 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6YX-ca-E8f"/>
-                        <color key="backgroundColor" name="BrandPurple"/>
+                        <color key="backgroundColor" name="BrandBlue"/>
                         <constraints>
                             <constraint firstItem="S6L-hg-cne" firstAttribute="trailing" secondItem="6YX-ca-E8f" secondAttribute="trailing" id="DBU-jl-PPO"/>
                             <constraint firstItem="xlo-0G-XA6" firstAttribute="leading" secondItem="6YX-ca-E8f" secondAttribute="leading" id="JMa-Pn-SZL"/>
                             <constraint firstItem="S6L-hg-cne" firstAttribute="leading" secondItem="6YX-ca-E8f" secondAttribute="leading" id="KGE-QV-Ill"/>
-                            <constraint firstItem="6YX-ca-E8f" firstAttribute="bottom" secondItem="xlo-0G-XA6" secondAttribute="bottom" id="KKG-6H-f0d"/>
+                            <constraint firstAttribute="bottom" secondItem="xlo-0G-XA6" secondAttribute="bottom" id="KKG-6H-f0d"/>
                             <constraint firstItem="xlo-0G-XA6" firstAttribute="top" secondItem="S6L-hg-cne" secondAttribute="bottom" id="Qf3-lP-Y4a"/>
                             <constraint firstItem="xlo-0G-XA6" firstAttribute="trailing" secondItem="6YX-ca-E8f" secondAttribute="trailing" id="ce0-gb-Mph"/>
                             <constraint firstItem="S6L-hg-cne" firstAttribute="top" secondItem="6YX-ca-E8f" secondAttribute="top" id="sQt-L5-8LV"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="TextX" id="Q5u-eL-Bgp">
+                    <navigationItem key="navigationItem" title="⚡️TextX" id="Q5u-eL-Bgp">
                         <barButtonItem key="rightBarButtonItem" title="Log Out" id="dTa-G7-qZC">
                             <connections>
                                 <action selector="logOutPressed:" destination="lwd-AH-u8E" id="a6n-yd-5ns"/>
@@ -355,7 +354,12 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="YjE-zc-wGr">
                         <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" name="BrandBlue"/>
                         <color key="barTintColor" name="BrandBlue"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" weight="black" pointSize="30"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -368,9 +372,7 @@
         </scene>
     </scenes>
     <designables>
-        <designable name="y7D-jv-BlJ">
-            <size key="intrinsicContentSize" width="198" height="60"/>
-        </designable>
+        <designable name="y7D-jv-BlJ"/>
     </designables>
     <resources>
         <image name="paperplane.fill" catalog="system" width="128" height="119"/>
@@ -391,7 +393,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemTealColor">
-            <color red="0.18823529410000001" green="0.69019607839999997" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
